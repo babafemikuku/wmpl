@@ -29,8 +29,6 @@ import {
   DialogClose,
 } from "@/components/ui/dialog";
 
-// ── Types ────────────────────────────────────────────────────────────────────
-
 type Service = {
   id: string;
   title: string;
@@ -354,8 +352,6 @@ const phases: Phase[] = [
   },
 ];
 
-// ── Page ─────────────────────────────────────────────────────────────────────
-
 export default function ServicesPage() {
   const [openService, setOpenService] = useState<Service | null>(null);
 
@@ -380,85 +376,46 @@ export default function ServicesPage() {
             <h1 className="mt-8 text-center text-[clamp(2rem,7.5vw,4.5rem)] font-semibold leading-[1.08] tracking-[-0.03em] text-parchment">
               Three focus areas. Eight services. One outcome.
             </h1>
-            <p className="mx-auto mt-6 max-w-4xl text-center text-[1.05rem] leading-[1.8] text-parchment/55">
-              WMP partners with leaders to design workforce structure for
-              sustainable business performance. Everything your business needs
-              to scale without breaking.
+            <p className="mx-auto mt-6 max-w-4xl text-center text-[1.25rem] leading-[1.8] text-parchment/55">
+              Workforce Management Partners with leaders to design workforce
+              structure for sustainable business performance. Everything your
+              business needs to scale without breaking.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── Partnership section ── */}
-      <section className="border-b border-border/60 bg-linen py-16 lg:py-24">
+      {/* ── Problem Statement ── */}
+      <section className="border-b border-border/60 bg-parchment py-16 lg:py-24">
         <div className="container">
-          <div className="grid items-start gap-12 lg:grid-cols-[1.4fr_1fr]">
-            {/* Left: positioning */}
+          <div className="grid items-start lg:items-center gap-12 lg:grid-cols-2">
             <FadeIn>
-              <h2 className="mt-6 text-[clamp(1.4rem,2.8vw,2rem)] font-semibold leading-[1.35] tracking-[-0.025em] text-near-black">
+              <h2 className="text-[clamp(1.5rem,3.5vw,2.5rem)] text-center lg:text-left font-semibold leading-[1.1] tracking-[-0.03em] text-near-black">
                 We partner with leaders to design workforce structure for
-                sustainable business performance.
+                sustainable business performance
               </h2>
-              <div className="mt-6 space-y-4 text-[1rem] leading-[1.85] text-warm-ash">
-                <p>
-                  The work covers operational models, accountability frameworks,
-                  and workforce strategy. Everything your business needs to
-                  scale without breaking.
-                </p>
-              </div>
             </FadeIn>
-
-            {/* Right: partnership philosophy */}
             <FadeIn delay={0.15}>
-              <div className="overflow-hidden rounded-sm border border-border/60 bg-parchment p-7 sm:p-8">
-                <div className="mb-5 h-px w-8 bg-electric-violet" />
-                <p className="text-[1rem] font-semibold leading-[1.6] text-near-black">
-                  The best workforce structures aren&apos;t delivered.
-                  They&apos;re built with the people who know the business best.
-                </p>
-                <p className="mt-4 text-[1rem] leading-[1.8] text-warm-ash">
-                  Our strongest partnerships happen when leaders are direct
-                  about what&apos;s breaking, open to being challenged, and
-                  ready to make decisions.
-                </p>
-                <div className="mt-6 border-t border-border/60 pt-6">
-                  <p className="text-[1rem] leading-[1.75] text-warm-ash">
-                    You bring the context and the commitment. We bring the
-                    expertise and the structure.{" "}
-                    <span className="font-medium">
-                      That combination is what makes the work land.
-                    </span>
-                  </p>
-                </div>
-              </div>
+              <p className="text-[1rem] leading-[1.85] text-warm-ash">
+                The work covers operational models, accountability frameworks,
+                and workforce strategy. Everything your business needs to scale
+                without breaking.
+              </p>
+              <p className="my-3 text-[1rem] leading-[1.85] text-warm-ash">
+                The best workforce structures aren&apos;t delivered.
+                They&apos;re built with the people who know the business best.
+              </p>
+              <p className="mt-3 text-[1rem] leading-[1.85] text-warm-ash">
+                Our strongest partnerships happen when leaders are direct about
+                what&apos;s breaking, open to being challenged, and ready to
+                make decisions. You bring the context and the commitment. We
+                bring the expertise and the structure. That combination is what
+                makes the work land.
+              </p>
             </FadeIn>
           </div>
         </div>
       </section>
-
-      <div className="grid grid-cols-3 gap-0.5 bg-border/60">
-        {[
-          { src: "/images/carousel-2.png", alt: "Team collaboration" },
-          { src: "/images/carousel-5.png", alt: "Leadership meeting" },
-          { src: "/images/carousel-4.png", alt: "Workplace conversation" },
-        ].map(({ src, alt }, i) => (
-          <motion.div
-            key={src}
-            className="h-28 overflow-hidden sm:h-[200px] lg:h-[260px]"
-            initial={{ opacity: 0, scale: 1.06 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{
-              duration: 0.75,
-              ease: [0.22, 1, 0.36, 1],
-              delay: i * 0.1,
-            }}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={src} alt={alt} className="h-full w-full object-cover" />
-          </motion.div>
-        ))}
-      </div>
 
       {/* ── Three-column phases + services ── */}
       <section className="relative overflow-hidden border-b border-border/60 py-16 bg-border/60 lg:py-24">
@@ -475,10 +432,10 @@ export default function ServicesPage() {
                       style={{ width: 160, height: 160, strokeWidth: 0.5 }}
                       aria-hidden
                     />
-                    <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.28em] text-electric-violet">
+                    {/* <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.28em] text-electric-violet">
                       0{phase.index}
-                    </p>
-                    <h2 className="text-[1.35rem] font-semibold leading-[1.2] tracking-[-0.025em] text-parchment">
+                    </p> */}
+                    <h2 className="text-[1.25rem] font-semibold leading-[1.2] tracking-[-0.025em] text-parchment">
                       {phase.title}
                     </h2>
                   </div>
@@ -504,11 +461,11 @@ export default function ServicesPage() {
                           />
                         </div>
 
-                        <h3 className="text-lg font-semibold leading-[1.3] tracking-[-0.02em] text-near-black">
+                        <h3 className="text-[1.125rem] font-semibold leading-[1.3] tracking-[-0.02em] text-near-black">
                           {service.title}
                         </h3>
 
-                        <p className="mt-3 flex-1 text-[0.875rem] leading-[1.85] text-warm-ash sm:text-[0.95rem]">
+                        <p className="mt-3 flex-1 text-[1rem] leading-[1.85] text-warm-ash sm:text-[0.95rem]">
                           {service.intro}
                         </p>
 
@@ -518,7 +475,7 @@ export default function ServicesPage() {
 
                         <button
                           onClick={() => setOpenService(service)}
-                          className="relative flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.2em] text-electric-violet transition-opacity hover:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric-violet"
+                          className="relative flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-electric-violet transition-opacity hover:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric-violet cursor-pointer"
                         >
                           See how this works
                           <ArrowUpRight className="h-3 w-3" />
@@ -536,16 +493,20 @@ export default function ServicesPage() {
       {/* ── Final CTA ── */}
       <section className="grain-overlay relative overflow-hidden bg-near-black py-20 text-center lg:py-36">
         <ConcentricRings />
-        <div className="container relative">
+        <FadeIn className="container relative">
           <h2 className="mx-auto mt-6 max-w-[22ch] text-balance text-[clamp(2.2rem,4.5vw,3.8rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-parchment">
-            Ready to move from reactive to structured?
+            Ready to build the structure your business needs?
           </h2>
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
+          <p className="mt-6 text-[1rem] leading-[1.8] text-parchment/45">
+            Get in touch. We&apos;ll arrange a conversation at a time that works
+            for us.
+          </p>
+          <div className="mt-12">
             <Button asChild size="lg">
-              <Link href="/contact">Start the conversation</Link>
+              <Link href="/contact">Get in touch</Link>
             </Button>
           </div>
-        </div>
+        </FadeIn>
       </section>
 
       {/* ── Service Dialog ── */}
@@ -641,8 +602,6 @@ export default function ServicesPage() {
     </main>
   );
 }
-
-// ── Shared sub-components ─────────────────────────────────────────────────────
 
 function FadeIn({
   children,

@@ -130,12 +130,12 @@ export default function ContactPage() {
                             name="name"
                             type="text"
                             autoComplete="name"
-                            placeholder="Afua Mensah"
+                            placeholder=""
                             value={form.name}
                             onChange={handleChange}
                             onFocus={() => setFocused("name")}
                             onBlur={() => setFocused(null)}
-                            className="w-full bg-transparent text-[15px] text-near-black placeholder:text-warm-ash/55 focus:outline-none"
+                            className="w-full bg-transparent text-[1rem] text-near-black placeholder:text-warm-ash/55 focus:outline-none"
                           />
                         </FieldWrapper>
 
@@ -146,12 +146,12 @@ export default function ContactPage() {
                             name="email"
                             type="email"
                             autoComplete="email"
-                            placeholder="afua@company.com"
+                            placeholder=""
                             value={form.email}
                             onChange={handleChange}
                             onFocus={() => setFocused("email")}
                             onBlur={() => setFocused(null)}
-                            className="w-full bg-transparent text-[15px] text-near-black placeholder:text-warm-ash/55 focus:outline-none"
+                            className="w-full bg-transparent text-[1rem] text-near-black placeholder:text-warm-ash/55 focus:outline-none"
                           />
                         </FieldWrapper>
                       </div>
@@ -167,7 +167,7 @@ export default function ContactPage() {
                             name="company"
                             type="text"
                             autoComplete="organization"
-                            placeholder="Your company"
+                            placeholder=""
                             value={form.company}
                             onChange={handleChange}
                             onFocus={() => setFocused("company")}
@@ -186,7 +186,7 @@ export default function ContactPage() {
                               onChange={handleChange}
                               onFocus={() => setFocused("size")}
                               onBlur={() => setFocused(null)}
-                              className={`w-full appearance-none bg-transparent text-[15px] focus:outline-none ${
+                              className={`w-full appearance-none bg-transparent text-[1rem] focus:outline-none ${
                                 form.size
                                   ? "text-near-black"
                                   : "text-warm-ash/55"
@@ -228,15 +228,15 @@ export default function ContactPage() {
                     </div>
 
                     {/* Submit */}
-                    <div className="flex items-center justify-between gap-4 border-t border-border/60 bg-linen px-8 py-5">
-                      <p className="text-[14px] leading-[1.6] text-warm-ash">
+                    <div className="flex flex-col lg:flex-row items-center justify-between gap-4 border-t border-border/60 bg-linen px-8 py-5">
+                      <p className="text-[1rem] text-center lg:text-left leading-[1.6] text-warm-ash">
                         We&apos;ll respond within one business day to arrange a
                         time.
                       </p>
                       <button
                         onClick={handleSubmit}
                         disabled={!isValid}
-                        className={`inline-flex items-center gap-2 rounded-sm px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric-violet ${
+                        className={`inline-flex w-full lg:w-[30%] text-center justify-center items-center gap-2 rounded-sm px-6 py-3 text-[1rem] font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric-violet ${
                           isValid
                             ? "bg-near-black text-parchment hover:bg-electric-violet"
                             : "cursor-not-allowed bg-near-black/20 text-near-black/30"
@@ -256,62 +256,13 @@ export default function ContactPage() {
 
             {/* ── Sidebar ── */}
             <div className="space-y-8 lg:sticky lg:top-24">
-              {/* Discovery call callout */}
-              <div className="relative overflow-hidden rounded-sm border border-border/60 bg-near-black p-8">
-                {/* Ghost icon */}
-                <Calendar
-                  className="pointer-events-none absolute -bottom-4 -right-4 text-parchment opacity-[0.06]"
-                  style={{ width: 120, height: 120, strokeWidth: 0.65 }}
-                  aria-hidden
-                />
-
-                <p className="mt-4 text-[1.05rem] font-semibold leading-[1.4] tracking-[-0.02em] text-parchment">
-                  Ready to build the structure your business needs?
-                </p>
-                <p className="mt-3 text-[15px] leading-[1.75] text-parchment/70">
-                  Ready to build the structure your business needs? We'll start
-                  with a conversation. You&apos;ll know within 45 minutes
-                  whether WMP is the right partner.
-                </p>
-
-                <div className="mt-6 h-px w-full bg-parchment/10">
-                  <div className="h-px w-full bg-electric-violet opacity-60" />
-                </div>
-              </div>
-
-              {/* Trust signals */}
-              {/* <div className="overflow-hidden rounded-sm border border-border/60">
-                {trustSignals.map(({ Icon, label, sub }, i) => (
-                  <div
-                    key={label}
-                    className={`flex items-start gap-4 bg-parchment p-5 ${
-                      i < trustSignals.length - 1
-                        ? "border-b border-border/60"
-                        : ""
-                    }`}
-                  >
-                    <div className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-sm bg-violet-tint">
-                      <Icon
-                        className="h-3.5 w-3.5 text-electric-violet"
-                        strokeWidth={1.5}
-                      />
-                    </div>
-                    <div>
-                      <p className="text-[0.875rem] font-semibold text-near-black">
-                        {label}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div> */}
-
               {/* Nav links */}
-              <div className="space-y-3 border-t border-border/60 pt-6">
+              <div className="space-y-3">
                 <p className="text-[13px] font-medium uppercase tracking-[0.15em] text-warm-ash">
                   Learn more first
                 </p>
                 {[
-                  { label: "What we do", href: "/services" },
+                  { label: "What we do", href: "/what-we-do" },
                   { label: "How we work", href: "/how-we-work" },
                 ].map((link) => (
                   <Link
@@ -412,7 +363,7 @@ function SuccessState() {
 
         <div className="mt-10 flex gap-4">
           <Link
-            href="/services"
+            href="/what-we-do"
             className="flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.2em] text-electric-violet transition-opacity hover:opacity-70"
           >
             Explore our services

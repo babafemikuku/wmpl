@@ -66,25 +66,18 @@ function HeroSection() {
 
           {/* Mobile text */}
           <div>
-            <h1 className="text-[clamp(2.2rem,8vw,3rem)] font-semibold leading-[1.08] tracking-[-0.035em] text-parchment">
-              {["Structures built", "by someone who's", "done it before."].map(
-                (line, i) => (
-                  <motion.span
-                    key={i}
-                    className="block"
-                    initial={{ opacity: 0, y: 28 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                      delay: 0.5 + i * 0.15,
-                      duration: 0.7,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
-                  >
-                    {line}
-                  </motion.span>
-                ),
-              )}
-            </h1>
+            <motion.h1
+              className="mt-8 text-[clamp(1.9rem,7.5vw,4.5rem)] font-semibold leading-[1.06] text-parchment"
+              initial={{ opacity: 0, y: 36 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.5 + 0 * 0.17,
+                duration: 0.75,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+            >
+              Founder Bio
+            </motion.h1>
 
             <motion.p
               className="mt-6 text-[0.95rem] leading-[1.85] text-parchment/55"
@@ -118,27 +111,18 @@ function HeroSection() {
         <div className="hidden min-h-[72vh] grid-cols-[1fr_auto] items-center gap-16 lg:grid">
           {/* Left: text */}
           <div className="max-w-[82ch]">
-            <h1 className="mt-8 text-[clamp(2.4rem,4.5vw,4rem)] font-semibold leading-[1.06] tracking-[-0.035em] text-parchment">
-              {[
-                { text: "Structures built" },
-                { text: "by someone who's" },
-                { text: "done it before." },
-              ].map((line, i) => (
-                <motion.span
-                  key={i}
-                  className="block"
-                  initial={{ opacity: 0, y: 36 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: 0.5 + i * 0.17,
-                    duration: 0.75,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                >
-                  {line.text}
-                </motion.span>
-              ))}
-            </h1>
+            <motion.h1
+              className="mt-8 text-[clamp(1.9rem,7.5vw,4.5rem)] font-semibold leading-[1.06] text-parchment"
+              initial={{ opacity: 0, y: 36 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.5 + 0 * 0.17,
+                duration: 0.75,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+            >
+              Founder Bio
+            </motion.h1>
 
             <motion.p
               className="mt-8 max-w-[74ch] text-[1rem] leading-[1.85] text-parchment/55"
@@ -150,7 +134,7 @@ function HeroSection() {
                 ease: [0.22, 1, 0.36, 1],
               }}
             >
-              Afua Mensah is the Principal of Workforce Management Partners — a
+              Afua Mensah is the Principal of Workforce Management Partners, a
               consultancy that partners with leaders to design the workforce
               structures their businesses need to scale.
             </motion.p>
@@ -184,10 +168,10 @@ function HeroSection() {
             </div>
 
             <div className="mt-4">
-              <p className="text-[12px] font-semibold uppercase tracking-[0.25em] text-electric-violet">
+              <p className="text-[1rem] font-semibold uppercase text-electric-violet">
                 Afua Mensah
               </p>
-              <p className="mt-0.5 text-[12px] text-parchment/35">
+              <p className="mt-0.5 text-[1rem] text-parchment/35">
                 Founder, WMP
               </p>
             </div>
@@ -210,16 +194,14 @@ function BioSection() {
         <div className="grid items-start gap-16 lg:grid-cols-[2.2fr_1fr]">
           {/* Left: full bio */}
           <FadeIn>
-            <p className="text-[0.75rem] font-semibold uppercase tracking-[0.25em] text-electric-violet">
+            {/* <p className="text-[1rem] font-semibold uppercase tracking-[0.25em] text-electric-violet">
               Background
-            </p>
-            <div className="mt-8 space-y-5 text-[1.05rem] leading-[1.9] text-warm-ash">
+            </p> */}
+            <div className="space-y-5 text-[1.05rem] leading-[1.9] text-warm-ash">
               <p>
-                Afua Mensah is the Principal of Workforce Management Partners, a
-                consultancy that partners with leaders to design the workforce
-                structures their businesses need to scale. She brings over a
-                decade of experience working directly with founders and senior
-                leadership teams in international, high-growth environments.
+                She brings over a decade of experience working directly with
+                founders and senior leadership teams in international,
+                high-growth environments.
               </p>
               <p>
                 Her background spans technology, fintech, esports, media, and
@@ -268,7 +250,7 @@ function BioSection() {
                 </p>
                 <div className="mt-6 flex items-center gap-3">
                   <div className="h-[5px] w-[5px] flex-shrink-0 rounded-full bg-electric-violet" />
-                  <p className="text-[0.75rem] font-medium uppercase tracking-[0.22em] text-electric-violet">
+                  <p className="text-[1rem] font-semibold uppercase text-electric-violet">
                     Afua Mensah
                   </p>
                 </div>
@@ -287,11 +269,11 @@ function StatsStrip() {
   return (
     <section className="grain-overlay bg-near-black py-24 lg:py-32">
       <div className="container">
-        <FadeIn className="mb-16 text-center">
+        {/* <FadeIn className="mb-16 text-center">
           <p className="text-[0.75rem] font-medium uppercase tracking-[0.28em] text-electric-violet">
             The track record
           </p>
-        </FadeIn>
+        </FadeIn> */}
 
         <motion.div
           className="grid grid-cols-3 gap-px overflow-hidden rounded-sm border border-parchment/[0.07] bg-parchment/[0.05]"
@@ -334,11 +316,8 @@ function SectorMarkets() {
     <section className="border-b border-border/60 bg-parchment py-24 lg:py-32">
       <div className="container">
         <FadeIn>
-          <p className="text-[0.75rem] font-semibold uppercase tracking-[0.25em] text-electric-violet">
-            Markets
-          </p>
           <h3 className="mt-4 text-[1.6rem] font-semibold leading-[1.2] tracking-[-0.02em] text-near-black">
-            International experience.
+            International experience
           </h3>
           <ul className="mt-8 flex flex-wrap gap-x-10 gap-y-3">
             {markets.map((m, i) => (
@@ -369,36 +348,20 @@ function SectorMarkets() {
 
 function CtaSection() {
   return (
-    <section className="grain-overlay relative overflow-hidden bg-near-black py-40 text-center">
+    <section className="grain-overlay relative overflow-hidden bg-near-black py-20 text-center lg:py-36">
       <ConcentricRings />
       <FadeIn className="container relative">
-        <div className="inline-flex items-center gap-3">
-          <div className="h-px w-8 bg-electric-violet" />
-          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-electric-violet">
-            Next step
-          </p>
-          <div className="h-px w-8 bg-electric-violet" />
-        </div>
-
         <h2 className="mx-auto mt-6 max-w-[22ch] text-balance text-[clamp(2.2rem,4.5vw,3.8rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-parchment">
-          Ready to build the structure{" "}
-          <em className="italic text-parchment/35">your business needs?</em>
+          Ready to build the structure your business needs?
         </h2>
-        <p className="mx-auto mt-6 max-w-[44ch] text-[0.95rem] leading-[1.8] text-parchment/45">
-          Get in touch. You&apos;ll know within 45 minutes whether WMP is the
-          right partner for where you&apos;re going.
+        <p className="mt-6 text-[1rem] leading-[1.8] text-parchment/45">
+          Get in touch. We&apos;ll arrange a conversation at a time that works
+          for us.
         </p>
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
+        <div className="mt-12">
           <Button asChild size="lg">
             <Link href="/contact">Get in touch</Link>
           </Button>
-          <Link
-            href="/services"
-            className="flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.2em] text-parchment/50 transition-colors hover:text-parchment"
-          >
-            See what we do
-            <ArrowUpRight className="h-3 w-3" />
-          </Link>
         </div>
       </FadeIn>
     </section>
@@ -440,7 +403,7 @@ function ConcentricRings() {
       {[500, 700, 900].map((size) => (
         <div
           key={size}
-          className="absolute rounded-full border border-electric-violet/30"
+          className="absolute rounded-full border border-electric-violet"
           style={{ width: size, height: size }}
         />
       ))}

@@ -2,8 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 const links = [
-  { href: "/", label: "What we do" },
-  { href: "/services", label: "How we work" },
+  { href: "/what-we-do", label: "What we do" },
+  { href: "/who-we-are", label: "Who we are" },
+  { href: "/how-we-work", label: "How we work" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -25,10 +26,12 @@ export function SiteFooter() {
                 alt="Workforce Management Partners"
                 width={156}
                 height={56}
-                className="h-10 w-auto"
+                className="h-10 w-auto sm:h-18"
               />
             </Link>
-            <p className="text-sm text-warm-ash">Partnering with leaders.</p>
+            <p className="text-[1rem] text-warm-ash">
+              Partnering with leaders.
+            </p>
           </div>
 
           {/* Right: nav links */}
@@ -37,7 +40,7 @@ export function SiteFooter() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-warm-ash transition-colors hover:text-near-black"
+                className="text-[1rem] font-medium text-warm-ash transition-colors hover:text-near-black hover:underline"
               >
                 {link.label}
               </Link>
@@ -46,16 +49,16 @@ export function SiteFooter() {
         </div>
 
         {/* Bottom strip */}
-        <div className="border-t border-border/50 pt-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs text-warm-ash">
+        <div className="border-t border-border/50 pt-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-center">
+          <p className="text-[1rem] text-warm-ash">
             © {new Date().getFullYear()} Workforce Management Partners
           </p>
-          <Link
+          {/* <Link
             href="/privacy"
             className="text-xs text-warm-ash transition-colors hover:text-near-black"
           >
             Privacy Policy
-          </Link>
+          </Link> */}
         </div>
       </div>
     </footer>

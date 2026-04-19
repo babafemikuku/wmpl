@@ -113,21 +113,19 @@ export default function HowWeWorkPage() {
         <HeroAccentLine />
 
         <div className="container relative flex min-h-[40vh] flex-col pb-0 pt-32">
-          <h1 className="mt-8 max-w-5xl mx-auto text-balance text-[clamp(2.8rem,5.5vw,4.5rem)] font-semibold leading-[1.06] tracking-[-0.035em] text-parchment">
+          <h1 className="mt-8 max-w-5xl mx-auto text-center text-[clamp(2.8rem,5.5vw,4.5rem)] font-semibold leading-[1.06] text-parchment">
             Direct questions. Honest answers. Work that lands.
           </h1>
         </div>
       </section>
 
       {/* ── OPENING STATEMENT ── */}
-      <section className="bg-parchment py-24 lg:py-32">
+      <section className="bg-parchment py-16 lg:py-24">
         <div className="container">
           <div className="grid items-center gap-16 lg:grid-cols-[1fr_2fr]">
-            <div>
-              <h2 className="mt-6 text-[clamp(1.8rem,3vw,2.6rem)] font-semibold leading-[1.15] tracking-[-0.03em] text-near-black">
-                Built with you. Not handed to you.
-              </h2>
-            </div>
+            <h2 className="mt-6 text-[clamp(1.5rem,3.5vw,2.5rem)] font-semibold leading-[1.15] tracking-[-0.03em] text-near-black">
+              Built with you. Not handed to you.
+            </h2>
             <div className="space-y-5 text-[1rem] leading-[1.9] text-warm-ash">
               <p>
                 Every WMP engagement starts with a conversation. 45 minutes to
@@ -149,83 +147,82 @@ export default function HowWeWorkPage() {
       </section>
 
       {/* ── ENGAGEMENT STAGES ── */}
-      <section className="bg-near-black py-24 lg:py-32">
+      <section className="bg-near-black py-16 lg:py-24">
         <div className="container">
-          <div className="mb-16 grid items-end gap-12">
-            <div>
-              <h2 className="mt-6 text-center text-5xl font-semibold leading-[1.1] tracking-[-0.03em] text-white">
-                What a typical engagement looks like
-              </h2>
-            </div>
+          {/* Section heading */}
+          <div className="mb-16 text-center">
+            <h2 className="mx-auto mt-6 max-w-[28ch] text-balance text-center text-[clamp(1.8rem,3.5vw,2.5rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-parchment">
+              What a typical engagement looks like
+            </h2>
           </div>
 
-          {/* Timeline — horizontal on desktop, vertical on mobile */}
-          <div className="relative">
-            {/* Desktop connector line */}
-            <div className="absolute left-0 right-0 top-[2.4rem] hidden h-px bg-parchment/10 lg:block" />
+          {/* Cards grid */}
+          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-sm border border-parchment/[0.08] bg-parchment/[0.06] lg:grid-cols-3">
+            {engagementStages.map((stage, i) => (
+              <div
+                key={stage.index}
+                className="group relative flex flex-col bg-near-black p-10"
+              >
+                {/* Top accent bar */}
+                <div
+                  className={`absolute inset-x-0 top-0 h-[2px] transition-opacity duration-300 opacity-20 group-hover:opacity-100`}
+                  style={{ background: "hsl(263 55% 57%)" }}
+                />
 
-            <div className="grid grid-cols-1 gap-0 lg:grid-cols-3 lg:gap-6">
-              {engagementStages.map((stage, i) => (
-                <div key={stage.index} className="group relative">
-                  {/* Mobile: left border spine */}
-                  <div className="absolute bottom-0 left-[1.95rem] top-0 w-px bg-parchment/10 lg:hidden" />
+                {/* Ghost number */}
+                <p
+                  className="mb-2 font-display text-[4.5rem] font-bold leading-none tracking-[-0.05em] text-parchment opacity-[0.05] transition-opacity duration-300 group-hover:opacity-[0.08]"
+                  aria-hidden
+                >
+                  {stage.index}
+                </p>
 
-                  <div className="relative p-0 pb-10 pl-16 lg:pl-0 lg:pt-0">
-                    {/* Node */}
-                    <div className="absolute left-0 top-0 flex h-16 w-16 flex-shrink-0 items-center justify-center lg:relative lg:mb-0 lg:h-auto lg:w-auto lg:flex-row lg:items-start">
-                      <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-parchment/20 bg-near-black text-[11px] font-semibold tracking-[0.1em] text-parchment/50 transition-colors duration-300 group-hover:border-electric-violet group-hover:text-electric-violet lg:h-12 lg:w-12">
-                        {stage.index}
-                      </div>
-                    </div>
+                {/* Label */}
+                <h3 className="text-[1.125rem] font-semibold leading-[1.35] text-parchment">
+                  {stage.label}
+                </h3>
 
-                    {/* Content */}
-                    <div className="lg:mt-0 lg:px-0 lg:pt-20">
-                      <h3 className="text-[1.2rem] lg:text-center font-semibold leading-[1.35] tracking-[-0.02em] text-parchment">
-                        {stage.label}
-                      </h3>
-                      <p className="mt-3 text-[1rem] text-justify leading-[1.8] text-parchment/50">
-                        {stage.summary}
-                      </p>
+                {/* Summary */}
+                <p className="mt-3 flex-1 text-[1rem] leading-[1.85] text-parchment/50">
+                  {stage.summary}
+                </p>
 
-                      {/* Tags */}
-                      <div className="mt-5 flex flex-wrap gap-2">
-                        {stage.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="rounded-[2px] border border-parchment/10 px-2.5 py-1 text-[0.9rem] font-medium tracking-[0.12em] text-parchment/35"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+                {/* Tags */}
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {stage.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-[2px] border border-parchment/[0.12] px-2.5 py-1 text-[0.9rem] font-medium text-parchment/30 transition-colors duration-300 group-hover:border-parchment/20 group-hover:text-parchment/50"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
 
-          {/* WMP leaves banner */}
-          <div className="mt-14 flex items-center justify-between rounded-sm border border-parchment/10 bg-parchment/[0.03] px-8 py-5">
-            <p className="text-[1rem] font-semibold tracking-[-0.01em] text-parchment">
-              WMP leaves. The structure stays.
-            </p>
-            <p className="hidden text-[1rem] text-parchment/40 sm:block">
-              Programme-level engagements include a separately scoped
-              implementation phase.
-            </p>
+          {/* WMP leaves banner — attached flush to the grid bottom */}
+          <div className="mt-px overflow-hidden border border-t-0 border-parchment/[0.08] bg-parchment/[0.03]">
+            <div className="flex flex-col items-start justify-between gap-2 px-10 py-5 sm:flex-row sm:items-center">
+              <p className="text-[1rem] font-semibold text-parchment">
+                WMP leaves. The structure stays.
+              </p>
+              <p className="text-[1rem] text-parchment/35">
+                Programme-level engagements include a separately scoped
+                implementation phase.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ── FOUR PILLARS ── */}
-      <section className="bg-parchment py-24 lg:py-32">
+      <section className="bg-parchment py-16 lg:py-24">
         <div className="container">
-          <div className="mb-16">
-            <h2 className="mt-6 text-center text-5xl font-semibold leading-[1.1] tracking-[-0.03em] text-near-black">
-              Every engagement is
-            </h2>
-          </div>
+          <h2 className="mt-6 text-center text-[clamp(1.5rem,3.5vw,2.5rem)] mb-14 font-semibold leading-[1.1] text-near-black">
+            Every engagement is...
+          </h2>
 
           <div className="grid grid-cols-1 gap-px overflow-hidden rounded-sm border border-border/60 bg-border/60 sm:grid-cols-2 lg:grid-cols-4">
             {engagementProps.map((prop, i) => (
@@ -239,7 +236,7 @@ export default function HowWeWorkPage() {
                 </p> */}
 
                 {/* Label */}
-                <p className="text-[0.8rem] font-semibold uppercase tracking-[0.2em] text-electric-violet">
+                <p className="text-[1rem] font-semibold uppercase text-electric-violet">
                   {prop.label}
                 </p>
 
@@ -268,25 +265,15 @@ export default function HowWeWorkPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="bg-linen py-24 lg:py-32">
+      <section className="bg-linen py-16 lg:py-24">
         <div className="container">
           <div className="grid items-start gap-16 lg:grid-cols-[1fr_2fr]">
             {/* Sticky heading */}
             <div className="lg:sticky lg:top-24">
               {/* <SectionEyebrow>FAQs</SectionEyebrow> */}
               <h2 className="mt-6 text-[clamp(1.8rem,3vw,2.6rem)] font-semibold leading-[1.15] tracking-[-0.03em] text-near-black">
-                Direct answers to direct questions.
+                Frequently Asked Questions
               </h2>
-              <p className="mt-4 text-[1rem] leading-[1.8] text-warm-ash">
-                If something isn&apos;t covered here, ask us directly.
-              </p>
-              <Link
-                href="/contact"
-                className="mt-6 flex items-center gap-2 text-[1rem] font-medium uppercase tracking-[0.2em] text-electric-violet transition-opacity hover:opacity-70"
-              >
-                Get in touch
-                <ArrowUpRight className="h-3 w-3" />
-              </Link>
             </div>
 
             {/* Accordion */}
@@ -315,7 +302,7 @@ export default function HowWeWorkPage() {
                         : "max-h-0 opacity-0"
                     }`}
                   >
-                    <p className="px-8 pb-7 text-[0.9rem] leading-[1.85] text-warm-ash">
+                    <p className="px-8 pb-7 text-[1rem] leading-[1.85] text-warm-ash">
                       {faq.a}
                     </p>
                   </div>
@@ -327,44 +314,22 @@ export default function HowWeWorkPage() {
       </section>
 
       {/* ── FINAL CTA ── */}
-      <section className="grain-overlay relative overflow-hidden bg-near-black py-40 text-center">
+      <section className="grain-overlay relative overflow-hidden bg-near-black py-20 text-center lg:py-36">
         <ConcentricRings />
-
-        {/* Tagline */}
-        <div className="container relative">
-          <SectionEyebrow light centered>
-            Ready
-          </SectionEyebrow>
-
-          <h2 className="mx-auto mt-6 max-w-[24ch] text-balance text-[clamp(2.2rem,4.5vw,3.8rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-parchment">
-            Ready to build the structure{" "}
-            <em className="italic text-parchment/30">your business needs?</em>
+        <FadeIn className="container relative">
+          <h2 className="mx-auto mt-6 max-w-[22ch] text-balance text-[clamp(2.2rem,4.5vw,3.8rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-parchment">
+            Ready to build the structure your business needs?
           </h2>
-
-          <p className="mx-auto mt-6 max-w-[42ch] text-[0.95rem] leading-[1.8] text-parchment/45">
-            Get in touch. We&apos;ll arrange a conversation at a time that
-            works. You&apos;ll know within 45 minutes whether WMP is the right
-            partner.
+          <p className="mt-6 text-[1rem] leading-[1.8] text-parchment/45">
+            Get in touch. We&apos;ll arrange a conversation at a time that works
+            for us.
           </p>
-
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-12">
             <Button asChild size="lg">
               <Link href="/contact">Get in touch</Link>
             </Button>
-            <Link
-              href="/services"
-              className="flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.2em] text-parchment/50 transition-colors hover:text-parchment"
-            >
-              See what we do
-              <ArrowUpRight className="h-3 w-3" />
-            </Link>
           </div>
-
-          {/* Closing line */}
-          <p className="mt-16 text-[0.75rem] uppercase tracking-[0.3em] text-parchment/20">
-            We partner with you to design the system. Running it is yours.
-          </p>
-        </div>
+        </FadeIn>
       </section>
     </main>
   );

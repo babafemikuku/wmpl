@@ -13,7 +13,6 @@ const navigation = [
   { href: "/what-we-do", label: "What We Do" },
   { href: "/who-we-are", label: "Who We Are" },
   { href: "/how-we-work", label: "How We Work" },
-  { href: "/contact", label: "Contact Us" },
 ];
 
 export function SiteHeader() {
@@ -63,7 +62,7 @@ export function SiteHeader() {
               alt="Workforce Management Partners"
               width={156}
               height={56}
-              className="h-9 w-auto sm:h-10"
+              className="h-9 w-auto sm:h-18"
               priority
             />
           </Link>
@@ -75,7 +74,7 @@ export function SiteHeader() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-sm font-medium transition-colors duration-200 hover:text-parchment ${
+                  className={`text-[0.9rem] font-medium transition-colors duration-200 hover:text-parchment ${
                     pathname === item.href
                       ? "text-parchment"
                       : "text-parchment/55"
@@ -89,7 +88,7 @@ export function SiteHeader() {
               asChild
               className="border border-parchment/20 bg-parchment/10 text-parchment hover:bg-parchment/20"
             >
-              <Link href="/contact">Work with us</Link>
+              <Link href="/contact">Contact us</Link>
             </Button>
           </div>
 
@@ -159,13 +158,13 @@ export function SiteHeader() {
               onClick={() => setMenuOpen(false)}
               className="flex w-full items-center justify-center rounded-sm border border-parchment/20 bg-parchment/10 py-4 text-[0.875rem] font-semibold uppercase tracking-[0.18em] text-parchment transition-colors hover:bg-parchment/20"
             >
-              Work with us
+              Contact us
             </Link>
 
             {/* Brand line */}
-            <p className="mt-6 text-center text-[0.7rem] uppercase tracking-[0.22em] text-parchment/20">
+            {/* <p className="mt-6 text-center text-[0.7rem] uppercase tracking-[0.22em] text-parchment/20">
               We partner with you to design the system.
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

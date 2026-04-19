@@ -9,6 +9,11 @@ import Image from "next/image";
 import { HomeOperatingLevers } from "@/components/home-operating-levers";
 import { Button } from "@/components/ui/button";
 
+const headlineLines = [
+  "The structure that got you here",
+  "won\u2019t get you where you\u2019re going.",
+];
+
 // ── Data ────────────────────────────────────────────────────────────────────
 
 const pillars = [
@@ -85,34 +90,23 @@ export default function HomePage() {
       {/* ── Problem Statement ── */}
       <section className="border-b border-border/60 bg-parchment py-16 lg:py-24">
         <div className="container">
-          <div className="grid items-start gap-12 lg:grid-cols-2">
+          <div className="grid items-start lg:items-center gap-12 lg:grid-cols-2">
             <FadeIn>
-              <h2 className="text-[clamp(2rem,3.5vw,3rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-near-black">
+              <h2 className="text-[clamp(1.5rem,3.5vw,2.5rem)] text-center lg:text-left font-semibold leading-[1.1] text-near-black">
                 Your operating model is limiting your growth
               </h2>
-              <div className="mt-8 overflow-hidden rounded-sm">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/what-we-do.png"
-                  alt="Leadership team in a working session"
-                  className="h-64 w-full object-cover lg:h-72"
-                />
-              </div>
             </FadeIn>
             <FadeIn delay={0.15}>
-              <p className="text-[1.2rem] leading-[1.85] text-warm-ash">
+              <p className="text-[1rem] leading-[1.85] text-warm-ash">
                 Most founders and leadership teams reach a point where the
                 business is growing, but something feels wrong. Decisions are
                 slow. Everyone is busy, but nothing is moving. Your best people
                 are frustrated.
               </p>
-              <p className="my-3 text-[1.2rem] leading-[1.85] text-warm-ash">
-                It&apos;s not a people problem.{" "}
-                <span className="font-medium text-near-black">
-                  It&apos;s a structural problem.
-                </span>
+              <p className="my-3 text-[1rem] leading-[1.85] text-warm-ash">
+                It&apos;s not a people problem. It&apos;s a structural problem.
               </p>
-              <p className="mt-3 text-[1.2rem] leading-[1.85] text-warm-ash">
+              <p className="mt-3 text-[1rem] leading-[1.85] text-warm-ash">
                 When a business scales faster than its operating model, the
                 symptoms show up in missed delivery, unclear ownership, reactive
                 hiring and unclear managerial responsibility. Every one of those
@@ -131,10 +125,10 @@ export default function HomePage() {
         <div className="container">
           <FadeIn className="mb-12">
             <h2 className="mt-6 text-center text-[clamp(1.5rem,3.5vw,2.5rem)] font-semibold leading-[1.15] tracking-[-0.03em] text-near-black">
-              WMP delivers services that support your commercial ambitions
-              across three areas.
+              Workforce Management Partners delivers services that support your
+              commercial ambitions across three areas
             </h2>
-            <h3 className="mt-6 text-center text-base font-semibold leading-[1.1] tracking-[-0.03em] text-near-black/90 sm:text-xl">
+            <h3 className="mt-6 text-center text-base font-semibold leading-[1.1] tracking-[-0.03em] text-near-black/90 sm:text-[1.25rem]">
               You bring the business context, we bring the expertise.
             </h3>
           </FadeIn>
@@ -165,7 +159,7 @@ export default function HomePage() {
                 >
                   {pillar.num}
                 </p> */}
-                <h3 className="mt-5 text-[1.35rem] font-semibold leading-[1.3] tracking-[-0.02em] text-near-black">
+                <h3 className="mt-5 text-[1.25rem] font-semibold leading-[1.3] tracking-[-0.02em] text-near-black">
                   {pillar.title}
                 </h3>
                 <p className="mt-3 text-[1rem] font-medium italic text-electric-violet">
@@ -284,7 +278,7 @@ export default function HomePage() {
                       <polyline points="1,5 3.5,7.5 9,2" />
                     </svg>
                   </span>
-                  <span className="text-[18px] font-semibold uppercase tracking-[0.22em] text-electric-violet">
+                  <span className="text-[1.25rem] font-semibold uppercase tracking-[0.22em] text-electric-violet">
                     What WMP Designs
                   </span>
                 </div>
@@ -303,7 +297,7 @@ export default function HomePage() {
 
               {/* Right — does not */}
               <div className="bg-parchment p-6 sm:p-10">
-                <span className="mb-6 block text-[18px] font-semibold uppercase tracking-[0.22em] text-warm-ash">
+                <span className="mb-6 block text-[1.25rem] font-semibold uppercase tracking-[0.22em] text-warm-ash">
                   What WMP Does Not Do
                 </span>
 
@@ -427,14 +421,14 @@ function HeroSection() {
           alt=""
           width={311}
           height={112}
-          className="h-auto w-48 sm:w-[16rem] lg:w-80"
+          className="h-auto w-48 sm:w-[16rem] lg:w-96"
           priority
         />
       </div>
 
       {/* ── Headline + CTA ── */}
-      <div className="relative z-10 mx-auto flex min-h-[92vh] w-full flex-col items-center justify-center px-4 py-16 text-center sm:py-24 md:px-8">
-        <h1 className="mt-8 text-[clamp(1.9rem,7.5vw,4.5rem)] font-semibold leading-[1.08] tracking-[-0.03em] text-parchment">
+      {/* <div className="relative z-10 mx-auto flex min-h-[92vh] w-full flex-col items-center justify-center px-4 py-16 text-center sm:py-24 md:px-8">
+        <h1 className="mt-8 text-[clamp(2.8rem,5.5vw,4.5rem)] font-semibold leading-[1.08] text-parchment">
           {[
             "The structure that got you here",
             "won\u2019t get you where you\u2019re going.",
@@ -464,19 +458,87 @@ function HeroSection() {
           })}
         </h1>
         <motion.p
-          className="mx-auto mt-6 max-w-[70ch] text-center text-[1rem] leading-[1.8] text-parchment/55"
+          className="mx-auto mt-6 max-w-[70ch] text-center text-[1.25rem] leading-[1.8] text-parchment/55"
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 2.3, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
         >
-          WMP works alongside leaders to design the workforce infrastructure
-          their businesses need to scale.
+          Workforce Management Partners works alongside leaders to design the
+          workforce infrastructure their businesses need to scale.
         </motion.p>
         <motion.div
           className="mt-10 flex flex-col items-center justify-center gap-4"
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 2.55, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <Button asChild size="lg">
+            <Link href="/contact">Get in touch</Link>
+          </Button>
+          <Link
+            href="/how-we-work"
+            className="border-b border-parchment/25 pb-px text-[1rem] text-parchment/60 transition-colors hover:border-parchment/55 hover:text-parchment"
+          >
+            See how we work →
+          </Link>
+        </motion.div>
+      </div> */}
+
+      <div className="relative z-10 mx-auto flex min-h-[92vh] w-full flex-col items-center justify-center px-4 py-16 text-center sm:py-24 md:px-8">
+        <h1 className="mt-8 text-[clamp(2.8rem,5.5vw,4.5rem)] font-semibold leading-[1.08] text-parchment">
+          {headlineLines.map((line, lineIndex) => {
+            // Animate word-by-word so words never break mid-word
+            const words = line.split(" ");
+            // Calculate global word offset for staggered delay across lines
+            const wordsBefore = headlineLines
+              .slice(0, lineIndex)
+              .reduce((sum, l) => sum + l.split(" ").length, 0);
+
+            return (
+              <span
+                key={lineIndex}
+                className="block"
+                // Prevent any mid-word breaks
+                style={{ wordBreak: "keep-all", overflowWrap: "normal" }}
+              >
+                {words.map((word, wi) => (
+                  <motion.span
+                    key={wi}
+                    // inline-block on the word, space added after
+                    className="inline-block"
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      delay: 0.35 + (wordsBefore + wi) * 0.1,
+                      duration: 0.4,
+                      ease: "easeOut",
+                    }}
+                  >
+                    {word}
+                    {/* Non-breaking space keeps words separated without collapsing */}
+                    {wi < words.length - 1 ? "\u00a0" : ""}
+                  </motion.span>
+                ))}
+              </span>
+            );
+          })}
+        </h1>
+
+        <motion.p
+          className="mx-auto mt-6 max-w-[70ch] text-center text-[1.25rem] leading-[1.8] text-parchment/55"
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.6, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+        >
+          Workforce Management Partners works alongside leaders to design the
+          workforce infrastructure their businesses need to scale.
+        </motion.p>
+
+        <motion.div
+          className="mt-10 flex flex-col items-center justify-center gap-4"
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.85, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
           <Button asChild size="lg">
             <Link href="/contact">Get in touch</Link>
