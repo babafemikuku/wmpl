@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 const stats = [
   { value: "10+", label: "Years experience" },
   { value: "5+", label: "Industries" },
-  { value: "13+", label: "Markets" },
+  { value: "13+", label: "Countries" },
 ];
 
 const markets = ["United Kingdom", "Europe", "Africa", "North America"];
@@ -19,9 +19,9 @@ export default function WhoWeArePage() {
   return (
     <main className="flex flex-1 flex-col">
       <HeroSection />
-      <BioSection />
+      {/* <BioSection /> */}
       <StatsStrip />
-      <SectorMarkets />
+      {/* <SectorMarkets /> */}
       <CtaSection />
     </main>
   );
@@ -55,10 +55,10 @@ function HeroSection() {
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-near-black/60 to-transparent" />
             </div>
             <div className="mt-3">
-              <p className="text-[12px] font-semibold uppercase tracking-[0.25em] text-electric-violet">
+              <p className="text-[1rem] font-semibold uppercase tracking-[0.25em] text-electric-violet">
                 Afua Mensah
               </p>
-              <p className="mt-0.5 text-[12px] text-parchment/35">
+              <p className="mt-0.5 text-[1rem] text-parchment/35">
                 Founder, WMP
               </p>
             </div>
@@ -67,7 +67,7 @@ function HeroSection() {
           {/* Mobile text */}
           <div>
             <motion.h1
-              className="mt-8 text-[clamp(1.9rem,7.5vw,4.5rem)] font-semibold leading-[1.06] text-parchment"
+              className="mt-8 text-[clamp(1.9rem,7.5vw,4.5rem)] font-semibold text-justify leading-[1.06] text-parchment"
               initial={{ opacity: 0, y: 36 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
@@ -76,11 +76,11 @@ function HeroSection() {
                 ease: [0.22, 1, 0.36, 1],
               }}
             >
-              Founder Bio
+              Afua Mensah
             </motion.h1>
 
-            <motion.p
-              className="mt-6 text-[0.95rem] leading-[1.85] text-parchment/55"
+            <motion.div
+              className="mt-6 text-[1rem] leading-[1.85] text-parchment/55"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
@@ -89,20 +89,51 @@ function HeroSection() {
                 ease: [0.22, 1, 0.36, 1],
               }}
             >
-              Afua Mensah is the Principal of Workforce Management Partners — a
-              consultancy that partners with leaders to design the workforce
-              structures their businesses need to scale.
-            </motion.p>
-
-            <motion.div
-              className="mt-8"
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.25, duration: 0.5 }}
-            >
-              <Button asChild size="lg">
-                <Link href="/contact">Work with Afua</Link>
-              </Button>
+              <blockquote className="italic">
+                "Most businesses don’t struggle because of strategy. They
+                struggle because their business isn’t structured to deliver it."
+              </blockquote>
+              <p>
+                Afua Mensah is the Principal of Workforce Management Partners, a
+                consultancy that partners with leaders to design the workforce
+                structures their businesses need to scale
+              </p>
+              <p>
+                She brings over a decade of experience working directly with
+                founders and senior leadership teams in international,
+                high-growth environments. Her background spans technology,
+                fintech, esports, media, and healthcare — across businesses
+                operating in the UK, Europe, Africa, and North America. That
+                breadth gives her a grounded understanding of how workforce
+                strategy has to adapt to different commercial contexts, and what
+                stays constant regardless of sector or market.
+              </p>
+              <p>
+                Afua's work is focused on a specific problem: when a business
+                grows faster than its structure, the symptoms show up
+                everywhere. Accountability becomes unclear. Hiring gets
+                reactive. Founders can't step back. She partners with leadership
+                teams to design the operational backbone that allows a business
+                to perform without depending on one or two individuals to hold
+                it together.
+              </p>
+              <p>
+                Her approach is commercial first. Roles and structures are
+                designed around how the business actually needs to work — the
+                result is organisations that operate with greater cost
+                discipline and the kind of consistency that makes growth
+                sustainable rather than exhausting.
+              </p>
+              <p>
+                Afua holds a CIPD Level 7 qualification in Strategic People
+                Management, the highest professional qualification in the field,
+                and brings that rigour to every engagement alongside practical
+                delivery experience across complex, fast-moving organisations.
+              </p>
+              <p>
+                Through WMP, she works with leaders who are ready to build
+                something that runs properly.
+              </p>
             </motion.div>
           </div>
         </div>
@@ -121,7 +152,7 @@ function HeroSection() {
                 ease: [0.22, 1, 0.36, 1],
               }}
             >
-              Founder Bio
+              Afua Mensah
             </motion.h1>
 
             <motion.p
@@ -134,21 +165,56 @@ function HeroSection() {
                 ease: [0.22, 1, 0.36, 1],
               }}
             >
-              Afua Mensah is the Principal of Workforce Management Partners, a
-              consultancy that partners with leaders to design the workforce
-              structures their businesses need to scale.
+              <div className="space-y-5 text-[1.05rem] leading-[1.9] text-parchment">
+                <blockquote className="italic">
+                  "Most businesses don’t struggle because of strategy. They
+                  struggle because their business isn’t structured to deliver
+                  it."
+                </blockquote>
+                <p>
+                  Afua Mensah is the Principal of Workforce Management Partners,
+                  a consultancy that partners with leaders to design the
+                  workforce structures their businesses need to scale
+                </p>
+                <p>
+                  She brings over a decade of experience working directly with
+                  founders and senior leadership teams in international,
+                  high-growth environments. Her background spans technology,
+                  fintech, esports, media, and healthcare — across businesses
+                  operating in the UK, Europe, Africa, and North America. That
+                  breadth gives her a grounded understanding of how workforce
+                  strategy has to adapt to different commercial contexts, and
+                  what stays constant regardless of sector or market.
+                </p>
+                <p>
+                  Afua's work is focused on a specific problem: when a business
+                  grows faster than its structure, the symptoms show up
+                  everywhere. Accountability becomes unclear. Hiring gets
+                  reactive. Founders can't step back. She partners with
+                  leadership teams to design the operational backbone that
+                  allows a business to perform without depending on one or two
+                  individuals to hold it together.
+                </p>
+                <p>
+                  Her approach is commercial first. Roles and structures are
+                  designed around how the business actually needs to work — the
+                  result is organisations that operate with greater cost
+                  discipline and the kind of consistency that makes growth
+                  sustainable rather than exhausting.
+                </p>
+                <p>
+                  Afua holds a CIPD Level 7 qualification in Strategic People
+                  Management, the highest professional qualification in the
+                  field, and brings that rigour to every engagement alongside
+                  practical delivery experience across complex, fast-moving
+                  organisations.
+                </p>
+                <p>
+                  Through WMP, she works with leaders who are ready to build
+                  something that runs properly.
+                </p>
+              </div>
             </motion.p>
-
-            <motion.div
-              className="mt-10"
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.35, duration: 0.55 }}
-            >
-              <Button asChild size="lg">
-                <Link href="/contact">Work with Afua</Link>
-              </Button>
-            </motion.div>
           </div>
 
           {/* Right: image */}
@@ -267,7 +333,7 @@ function BioSection() {
 
 function StatsStrip() {
   return (
-    <section className="grain-overlay bg-near-black py-24 lg:py-32">
+    <section className="grain-overlay bg-parchment py-24 lg:py-32">
       <div className="container">
         {/* <FadeIn className="mb-16 text-center">
           <p className="text-[0.75rem] font-medium uppercase tracking-[0.28em] text-electric-violet">
@@ -276,7 +342,7 @@ function StatsStrip() {
         </FadeIn> */}
 
         <motion.div
-          className="grid grid-cols-3 gap-px overflow-hidden rounded-sm border border-parchment/[0.07] bg-parchment/[0.05]"
+          className="grid grid-cols-3 gap-px overflow-hidden rounded-sm bg-parchment/[0.05]"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
@@ -293,52 +359,17 @@ function StatsStrip() {
                   transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
                 },
               }}
-              className="flex flex-col items-center justify-center bg-near-black px-4 py-10 text-center"
+              className="flex flex-col items-center justify-center bg-parchment px-4 py-10 text-center"
             >
-              <p className="font-display text-[2.5rem] font-bold leading-none tracking-[-0.04em] text-parchment sm:text-[3.5rem] lg:text-[4.5rem]">
+              <p className="font-display text-[2.5rem] font-bold leading-none tracking-[-0.04em] text-near-black sm:text-[3.5rem] lg:text-[4.5rem]">
                 {stat.value}
               </p>
-              <p className="mt-3 text-[0.65rem] font-medium uppercase tracking-[0.2em] text-parchment/40 sm:text-[0.75rem]">
+              <p className="mt-3 text-[0.65rem] font-medium uppercase tracking-[0.2em] text-neat-black sm:text-[0.75rem]">
                 {stat.label}
               </p>
             </motion.div>
           ))}
         </motion.div>
-      </div>
-    </section>
-  );
-}
-
-// ── Markets ───────────────────────────────────────────────────────────────────
-
-function SectorMarkets() {
-  return (
-    <section className="border-b border-border/60 bg-parchment py-24 lg:py-32">
-      <div className="container">
-        <FadeIn>
-          <h3 className="mt-4 text-[1.6rem] font-semibold leading-[1.2] tracking-[-0.02em] text-near-black">
-            International experience
-          </h3>
-          <ul className="mt-8 flex flex-wrap gap-x-10 gap-y-3">
-            {markets.map((m, i) => (
-              <motion.li
-                key={m}
-                className="flex items-center gap-3"
-                initial={{ opacity: 0, x: -16 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  delay: 0.08 * i,
-                  duration: 0.5,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-              >
-                <div className="h-[5px] w-[5px] flex-shrink-0 rounded-full bg-electric-violet" />
-                <span className="text-[1rem] text-warm-ash">{m}</span>
-              </motion.li>
-            ))}
-          </ul>
-        </FadeIn>
       </div>
     </section>
   );
@@ -351,13 +382,11 @@ function CtaSection() {
     <section className="grain-overlay relative overflow-hidden bg-near-black py-20 text-center lg:py-36">
       <ConcentricRings />
       <FadeIn className="container relative">
-        <h2 className="mx-auto mt-6 max-w-[22ch] text-balance text-[clamp(2.2rem,4.5vw,3.8rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-parchment">
-          Ready to build the structure your business needs?
+        <h2 className="mx-auto mt-6 max-w-[32ch] text-balance text-[clamp(2.2rem,4.5vw,3.8rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-parchment">
+          Get in touch. We'll arrange a conversation at a time that works for
+          both of us.
         </h2>
-        <p className="mt-6 text-[1rem] leading-[1.8] text-parchment/45">
-          Get in touch. We&apos;ll arrange a conversation at a time that works
-          for us.
-        </p>
+
         <div className="mt-12">
           <Button asChild size="lg">
             <Link href="/contact">Get in touch</Link>
@@ -403,7 +432,7 @@ function ConcentricRings() {
       {[500, 700, 900].map((size) => (
         <div
           key={size}
-          className="absolute rounded-full border border-electric-violet"
+          className="absolute rounded-full border border-electric-violet/30"
           style={{ width: size, height: size }}
         />
       ))}

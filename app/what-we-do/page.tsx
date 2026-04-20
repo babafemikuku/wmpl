@@ -374,13 +374,8 @@ export default function ServicesPage() {
         <div className="container relative flex min-h-[62vh] items-center px-4 py-16 sm:py-24 md:px-8">
           <div className="mx-auto max-w-6xl">
             <h1 className="mt-8 text-center text-[clamp(2rem,7.5vw,4.5rem)] font-semibold leading-[1.08] tracking-[-0.03em] text-parchment">
-              Three focus areas. Eight services. One outcome.
+              Where structure drives performance.
             </h1>
-            <p className="mx-auto mt-6 max-w-4xl text-center text-[1.25rem] leading-[1.8] text-parchment/55">
-              Workforce Management Partners with leaders to design workforce
-              structure for sustainable business performance. Everything your
-              business needs to scale without breaking.
-            </p>
           </div>
         </div>
       </section>
@@ -494,13 +489,11 @@ export default function ServicesPage() {
       <section className="grain-overlay relative overflow-hidden bg-near-black py-20 text-center lg:py-36">
         <ConcentricRings />
         <FadeIn className="container relative">
-          <h2 className="mx-auto mt-6 max-w-[22ch] text-balance text-[clamp(2.2rem,4.5vw,3.8rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-parchment">
-            Ready to build the structure your business needs?
+          <h2 className="mx-auto mt-6 max-w-[32ch] text-balance text-[clamp(2.2rem,4.5vw,3.8rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-parchment">
+            Get in touch. We'll arrange a conversation at a time that works for
+            both of us.
           </h2>
-          <p className="mt-6 text-[1rem] leading-[1.8] text-parchment/45">
-            Get in touch. We&apos;ll arrange a conversation at a time that works
-            for us.
-          </p>
+
           <div className="mt-12">
             <Button asChild size="lg">
               <Link href="/contact">Get in touch</Link>
@@ -634,7 +627,7 @@ function ConcentricRings() {
       {[500, 700, 900].map((size) => (
         <div
           key={size}
-          className="absolute rounded-full border border-electric-violet"
+          className="absolute rounded-full border border-electric-violet/30"
           style={{ width: size, height: size }}
         />
       ))}

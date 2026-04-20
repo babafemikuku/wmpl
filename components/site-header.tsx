@@ -75,9 +75,7 @@ export function SiteHeader() {
                   key={item.href}
                   href={item.href}
                   className={`text-[0.9rem] font-medium transition-colors duration-200 hover:text-parchment ${
-                    pathname === item.href
-                      ? "text-parchment"
-                      : "text-parchment/55"
+                    pathname === item.href ? "text-parchment" : "text-parchment"
                   }`}
                 >
                   {item.label}
@@ -136,10 +134,10 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className={`flex items-center justify-between py-4 text-[1rem] font-medium transition-colors duration-150 ${
+                className={`flex items-center justify-between py-4 text-[1rem] font-bold transition-colors duration-150 ${
                   pathname === item.href
-                    ? "text-parchment"
-                    : "text-parchment/55 hover:text-parchment"
+                    ? "text-white"
+                    : "text-white hover:text-parchment"
                 }`}
                 style={{ transitionDelay: menuOpen ? `${i * 30}ms` : "0ms" }}
               >

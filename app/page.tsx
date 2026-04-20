@@ -162,7 +162,7 @@ export default function HomePage() {
                 <h3 className="mt-5 text-[1.25rem] font-semibold leading-[1.3] tracking-[-0.02em] text-near-black">
                   {pillar.title}
                 </h3>
-                <p className="mt-3 text-[1rem] font-medium italic text-electric-violet">
+                <p className="mt-3 text-[11px] uppercase font-semibold text-electric-violet">
                   {pillar.question}
                 </p>
                 <p className="mt-4 text-[1rem] leading-7 text-warm-ash">
@@ -176,13 +176,6 @@ export default function HomePage() {
 
       {/* ── The Insight ── */}
       <section className="grain-overlay relative overflow-hidden bg-near-black py-16 lg:py-24">
-        <span
-          className="pointer-events-none absolute -bottom-8 -left-2 select-none font-display text-[10rem] font-bold leading-none tracking-[-0.04em] text-parchment opacity-[0.02]"
-          aria-hidden
-        >
-          Structure
-        </span>
-
         <div className="container relative">
           <FadeIn className="mb-12">
             <h2 className="mt-6 text-center text-[clamp(1.5rem,3.5vw,2.5rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-parchment">
@@ -338,13 +331,14 @@ export default function HomePage() {
       <section className="grain-overlay relative overflow-hidden bg-near-black py-20 text-center lg:py-36">
         <ConcentricRings />
         <FadeIn className="container relative">
-          <h2 className="mx-auto mt-6 max-w-[22ch] text-balance text-[clamp(2.2rem,4.5vw,3.8rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-parchment">
-            Ready to build the structure your business needs?
+          <h2 className="mx-auto mt-6 max-w-[32ch] text-balance text-[clamp(2.2rem,4.5vw,3.8rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-parchment">
+            Get in touch. We'll arrange a conversation at a time that works for
+            both of us.
           </h2>
-          <p className="mt-6 text-[1rem] leading-[1.8] text-parchment/45">
+          {/* <p className="mt-6 text-[1rem] leading-[1.8] text-parchment/45">
             Get in touch. We&apos;ll arrange a conversation at a time that works
             for us.
-          </p>
+          </p> */}
           <div className="mt-12">
             <Button asChild size="lg">
               <Link href="/contact">Get in touch</Link>
@@ -1137,7 +1131,7 @@ function ConcentricRings() {
       {[500, 700, 900].map((size) => (
         <div
           key={size}
-          className="absolute rounded-full border border-electric-violet"
+          className="absolute rounded-full border border-electric-violet/30"
           style={{ width: size, height: size }}
         />
       ))}

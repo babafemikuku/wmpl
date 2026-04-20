@@ -114,7 +114,7 @@ export default function HowWeWorkPage() {
 
         <div className="container relative flex min-h-[40vh] flex-col pb-0 pt-32">
           <h1 className="mt-8 max-w-5xl mx-auto text-center text-[clamp(2.8rem,5.5vw,4.5rem)] font-semibold leading-[1.06] text-parchment">
-            Direct questions. Honest answers. Work that lands.
+            A straightforward way of working that delivers results.
           </h1>
         </div>
       </section>
@@ -317,13 +317,11 @@ export default function HowWeWorkPage() {
       <section className="grain-overlay relative overflow-hidden bg-near-black py-20 text-center lg:py-36">
         <ConcentricRings />
         <FadeIn className="container relative">
-          <h2 className="mx-auto mt-6 max-w-[22ch] text-balance text-[clamp(2.2rem,4.5vw,3.8rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-parchment">
-            Ready to build the structure your business needs?
+          <h2 className="mx-auto mt-6 max-w-[32ch] text-balance text-[clamp(2.2rem,4.5vw,3.8rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-parchment">
+            Get in touch. We'll arrange a conversation at a time that works for
+            both of us.
           </h2>
-          <p className="mt-6 text-[1rem] leading-[1.8] text-parchment/45">
-            Get in touch. We&apos;ll arrange a conversation at a time that works
-            for us.
-          </p>
+
           <div className="mt-12">
             <Button asChild size="lg">
               <Link href="/contact">Get in touch</Link>
@@ -367,7 +365,7 @@ function ConcentricRings() {
       {[500, 700, 900].map((size) => (
         <div
           key={size}
-          className="absolute rounded-full border border-electric-violet"
+          className="absolute rounded-full border border-electric-violet/30"
           style={{ width: size, height: size }}
         />
       ))}
