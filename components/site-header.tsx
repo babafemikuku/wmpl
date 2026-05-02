@@ -4,15 +4,23 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, TrendingUp, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerClose,
+} from "@/components/ui/drawer";
 
 const navigation = [
   { href: "/", label: "Home" },
   { href: "/what-we-do", label: "What We Do" },
-  { href: "/who-we-are", label: "Who We Are" },
   { href: "/how-we-work", label: "How We Work" },
+  { href: "/our-work", label: "Our Work" },
+  { href: "/insights", label: "Insights" },
 ];
 
 export function SiteHeader() {
@@ -42,15 +50,8 @@ export function SiteHeader() {
 
   return (
     <>
-      <header
-        className={`sticky top-0 z-50 transition-all duration-500 ${
-          scrolled || menuOpen
-            ? "bg-near-black/95 backdrop-blur-xl shadow-[0_1px_0_rgba(255,255,255,0.07)]"
-            : "bg-near-black/90 backdrop-blur-sm shadow-[0_1px_0_rgba(255,255,255,0.04)]"
-        }`}
-      >
-        <div className="container flex min-h-20 items-center justify-between gap-6">
-          {/* Logo */}
+      <header className="bg-[#F7F5F0]">
+        <div className="container flex min-h-20 items-center justify-between">
           <Link
             href="/"
             className="flex items-center"
@@ -58,114 +59,103 @@ export function SiteHeader() {
             aria-label="Workforce Management Partners"
           >
             <Image
-              src="/logo.svg"
+              src="/logo-mark-white.svg"
               alt="Workforce Management Partners"
               width={156}
               height={56}
-              className="h-9 w-auto sm:h-18"
+              className="h-14 w-auto sm:h-18"
               priority
             />
           </Link>
 
-          {/* Desktop nav */}
-          <div className="hidden items-center gap-6 lg:flex">
+          <div className="hidden lg:flex">
             <nav className="flex items-center gap-6">
               {navigation.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-[0.9rem] font-medium transition-colors duration-200 hover:text-parchment ${
-                    pathname === item.href ? "text-parchment" : "text-parchment"
+                  className={`text-[0.9rem] font-medium font-body transition-colors duration-200 hover:underline ${
+                    pathname === item.href
+                      ? "text-[#7B4FD4] underline font-extrabold"
+                      : "text-[#1C1C1C]"
                   }`}
                 >
                   {item.label}
                 </Link>
               ))}
             </nav>
-            <Button
-              asChild
-              className="border border-parchment/20 bg-parchment/10 text-parchment hover:bg-parchment/20"
-            >
-              <Link href="/contact">Contact us</Link>
-            </Button>
           </div>
 
-          {/* Mobile: hamburger */}
+          <Button
+            asChild
+            className="hidden! lg:flex! items-center gap-1 bg-[#7B4FD4] text-parchment hover:scale-3d rounded-lg"
+          >
+            <Link href="/contact">
+              Contact us
+              <TrendingUp strokeWidth={2} className="w-5 h-5" />
+            </Link>
+          </Button>
+
           <button
             onClick={() => setMenuOpen((v) => !v)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
-            className="flex h-10 w-10 items-center justify-center rounded-sm text-parchment/70 transition-colors hover:text-parchment focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric-violet lg:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-sm text-[#1C1C1C] transition-colors hover:text-parchment focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric-violet lg:hidden"
           >
             {menuOpen ? (
-              <X className="h-5 w-5" />
+              <X className="h-6 w-6" />
             ) : (
-              <Menu className="h-5 w-5" />
+              <Menu className="h-6 w-6" />
             )}
           </button>
         </div>
       </header>
 
-      {/* ── Mobile drawer ── */}
-      {/* Backdrop */}
-      <div
-        className={`fixed inset-0 z-40 bg-near-black/60 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
-          menuOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        }`}
-        onClick={() => setMenuOpen(false)}
-        aria-hidden
-      />
-
-      {/* Drawer panel */}
-      <div
-        className={`fixed inset-x-0 top-20 z-40 transition-all duration-300 ease-in-out lg:hidden ${
-          menuOpen
-            ? "translate-y-0 opacity-100"
-            : "-translate-y-3 opacity-0 pointer-events-none"
-        }`}
-      >
-        <div className="border-b border-parchment/10 bg-near-black shadow-[0_24px_48px_rgba(0,0,0,0.5)]">
-          {/* Nav links */}
-          <nav className="container divide-y divide-parchment/[0.07]">
-            {navigation.map((item, i) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setMenuOpen(false)}
-                className={`flex items-center justify-between py-4 text-[1rem] font-bold transition-colors duration-150 ${
-                  pathname === item.href
-                    ? "text-white"
-                    : "text-white hover:text-parchment"
-                }`}
-                style={{ transitionDelay: menuOpen ? `${i * 30}ms` : "0ms" }}
+      <Drawer open={menuOpen} onOpenChange={setMenuOpen} direction="right">
+        <DrawerContent className="flex flex-col border-none bg-parchment lg:hidden rounded-none">
+          <DrawerHeader className="flex items-center justify-items-end border-b border-parchment/[0.07] px-6 py-5">
+            <DrawerClose asChild>
+              <button
+                aria-label="Close menu"
+                className="flex! h-12 w-12 items-center justify-center rounded-full bg-parchment/10 transition-colors hover:bg-parchment/20"
               >
-                <span>{item.label}</span>
-                {pathname === item.href && (
-                  <span className="h-1 w-1 rounded-full bg-electric-violet" />
-                )}
-              </Link>
-            ))}
+                <X className="text-near-black w-6 h-6" />
+              </button>
+            </DrawerClose>
+          </DrawerHeader>
+
+          <nav className="flex flex-1 flex-col px-6 rounded-none">
+            {navigation.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className={`flex items-center justify-between py-5 text-xl font-semibold transition-colors text-near-black`}
+                >
+                  <span>{item.label}</span>
+                  {isActive && (
+                    <span className="h-1.5 w-1.5 rounded-full bg-electric-violet" />
+                  )}
+                </Link>
+              );
+            })}
           </nav>
 
-          {/* CTA */}
-          <div className="container pb-8 pt-4">
+          <div className="px-6 py-8">
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
-              className="flex w-full items-center justify-center rounded-sm border border-parchment/20 bg-parchment/10 py-4 text-[0.875rem] font-semibold uppercase tracking-[0.18em] text-parchment transition-colors hover:bg-parchment/20"
+              className="flex w-full items-center justify-center gap-2 rounded-xl py-4 text-[0.875rem] font-semibold text-white transition-opacity hover:opacity-85"
+              style={{ backgroundColor: "#7B4FD4" }}
             >
               Contact us
+              <TrendingUp strokeWidth={2} className="h-4 w-4" />
             </Link>
-
-            {/* Brand line */}
-            {/* <p className="mt-6 text-center text-[0.7rem] uppercase tracking-[0.22em] text-parchment/20">
-              We partner with you to design the system.
-            </p> */}
           </div>
-        </div>
-      </div>
+        </DrawerContent>
+      </Drawer>
     </>
   );
 }

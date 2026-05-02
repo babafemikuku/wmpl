@@ -23,7 +23,7 @@ function Button({
       "bg-primary text-primary-foreground hover:bg-deep-violet",
     variant === "secondary" && "bg-linen text-near-black hover:bg-parchment",
     variant === "outline" &&
-      "border border-border bg-transparent text-foreground hover:bg-linen",
+      "border border-[#787068] bg-transparent text-foreground hover:bg-linen",
     variant === "ghost" && "text-foreground hover:bg-linen",
     size === "default" && "h-10 px-4 py-2",
     size === "lg" && "h-12 px-6 text-[1rem]",

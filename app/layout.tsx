@@ -1,30 +1,27 @@
 import type { Metadata } from "next";
 import {
   Cormorant_Garamond,
+  DM_Sans,
   Instrument_Sans,
   Public_Sans,
+  Playfair_Display,
 } from "next/font/google";
 
-import { SiteFooter } from "@/components/site-footer";
+import { CtaCard, SiteFooter } from "@/components/global/Footer";
 import { SiteHeader } from "@/components/site-header";
 
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-display",
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-dm-sans",
 });
 
-const publicSans = Public_Sans({
-  variable: "--font-body",
-  subsets: ["latin"],
-});
-
-const instrument_Sans = Instrument_Sans({
+const playfairDisplay = Playfair_Display({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -44,7 +41,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={` ${instrument_Sans.variable} h-full scroll-smooth`}
+      className={` ${dmSans.variable} ${playfairDisplay.variable} h-full scroll-smooth`}
     >
       <body className="min-h-full bg-background font-body text-foreground antialiased">
         <div className="flex min-h-screen flex-col">
