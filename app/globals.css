@@ -71,6 +71,10 @@ body {
   color: var(--foreground);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1,
 h2,
 h3,
@@ -93,7 +97,6 @@ li {
   width: min(100% - 2rem, 78rem);
 }
 
-/* Grain overlay — kept as-is */
 .grain-overlay {
   position: relative;
 }

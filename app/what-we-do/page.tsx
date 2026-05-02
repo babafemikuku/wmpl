@@ -396,18 +396,26 @@ export default function ServicesPage() {
           </div>
         </FadeUp>
 
-        <Services
-          phase={phases[0]}
-          onServiceSelect={(service) => setOpenService(service)}
-        />
-        <Services
-          phase={phases[1]}
-          onServiceSelect={(service) => setOpenService(service)}
-        />
-        <Services
-          phase={phases[2]}
-          onServiceSelect={(service) => setOpenService(service)}
-        />
+        <div id="build-the-foundation">
+          <Services
+            phase={phases[0]}
+            onServiceSelect={(service) => setOpenService(service)}
+          />
+        </div>
+
+        <div id="design-for-growth">
+          <Services
+            phase={phases[1]}
+            onServiceSelect={(service) => setOpenService(service)}
+          />
+        </div>
+
+        <div id="scale-sustainably">
+          <Services
+            phase={phases[2]}
+            onServiceSelect={(service) => setOpenService(service)}
+          />
+        </div>
       </section>
 
       <div className="container py-10">
