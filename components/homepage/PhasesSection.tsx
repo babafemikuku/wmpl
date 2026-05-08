@@ -22,12 +22,17 @@ const phases = [
   },
 ];
 
+// Section label: 10px
+// Section heading (same class): 42px
+// Stage name: 28px
+// Scenario text: 15px
+
 export function PhasesSection() {
   return (
     <section className="bg-linen py-24 lg:py-14">
       <div className="container">
         <FadeUp>
-          <h2 className="mb-10 text-center text-[32px] font-semibold leading-[1.1] tracking-[-0.03em] text-near-black">
+          <h2 className="mb-10 text-center text-[42px] font-semibold leading-[1.1] tracking-[-0.03em] text-near-black">
             Every situation is different, but the pattern is the same.
           </h2>
         </FadeUp>

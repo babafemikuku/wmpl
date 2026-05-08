@@ -146,20 +146,20 @@ export function SiteFooter() {
               />
 
               <div className="relative">
-                <h2 className="mx-auto max-w-[30ch] font-bold leading-[1.1] text-5xl md:text-[64px] tracking-[-0.03em] text-white">
+                <h2 className="mx-auto max-w-[40ch] font-bold leading-[1.1] text-3xl md:text-[44px] tracking-[-0.03em] text-white">
                   Ready to build the structure your business needs?
                 </h2>
-                <p className="mx-auto mt-5 max-w-[44ch] text-lg text-white font-semibold">
+                <p className="mx-auto mt-5 max-w-[44ch] text-[15px] text-white font-semibold">
                   Start the conversation.
                 </p>
-                <p className="mx-auto text-lg text-white font-semibold">
+                <p className="mx-auto text-[15px] text-white font-semibold">
                   A focused discussion on where you are and what needs to
                   change.
                 </p>
                 <div className="mt-8">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white px-7 py-2.5 text-base font-bold tracking-[-0.01em] text-[#7b4fd4] transition-opacity hover:opacity-80"
+                    className="inline-flex text-xs items-center gap-2 rounded-lg border border-white/20 bg-white px-7 py-2.5 font-bold tracking-[-0.01em] text-[#7b4fd4] transition-opacity hover:opacity-80"
                   >
                     Get in Touch
                     <TrendingUp

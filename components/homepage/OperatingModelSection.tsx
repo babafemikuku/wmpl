@@ -1,18 +1,24 @@
 import Image from "next/image";
 import { FadeIn, FadeUp } from "../global/animations";
 
+// Problem section
+
+// Label: 10px
+// Heading: 44px
+// Body: 15px
+
 export default function OperatingModelSection() {
   return (
     <section className="bg-[#7B4FD4] px-4 md:px-8 py-20">
       <div className="container grid grid-cols-1 lg:grid-cols-2 gap-18 items-center">
         <div className="text-white">
           <FadeUp>
-            <h2 className="text-4xl lg:text-5xl font-bold font-serif leading-tight mb-8">
+            <h2 className="text-4xl lg:text-[44px] font-bold font-serif leading-tight mb-8">
               Your operating model is limiting your growth
             </h2>
           </FadeUp>
           <FadeUp delay={0.2}>
-            <div className="space-y-5 text-[18px] font-medium leading-relaxed text-white">
+            <div className="space-y-5 text-[15px] font-medium leading-relaxed text-white">
               <p>
                 Most founders and leadership teams reach a point where the
                 business is growing, but something feels wrong. Decisions are

@@ -176,28 +176,7 @@ export function SiteHeader() {
 // Headline (h1): 58px
 // Body text: 16px
 
-// Problem section
-
-// Label: 10px
-// Heading: 44px
-// Body: 15px
-
-// Services
-
-// Section label: 10px
-// Section heading: 42px
-// Card number: 48px
-// Card title: 26px
-// Card question (italic): 13px
-// Card body: 14px
-// Learn more link: 11px
-
 // Scenarios
-
-// Section label: 10px
-// Section heading (same class): 42px
-// Stage name: 28px
-// Scenario text: 15px
 
 // Scope
 

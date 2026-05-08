@@ -23,6 +23,16 @@ const areas = [
   },
 ];
 
+// Services
+
+// Section label: 10px
+// Section heading: 42px
+// Card number: 48px
+// Card title: 26px
+// Card question (italic): 13px
+// Card body: 14px
+// Learn more link: 11px
+
 export default function ServiceAreas() {
   return (
     <section
@@ -35,7 +45,7 @@ export default function ServiceAreas() {
       }}
     >
       <div className="text-center mb-12">
-        <h2 className="text-[32px] font-bold font-serif text-[#1C1C1C] leading-tight mb-4">
+        <h2 className="text-[42px] font-bold font-serif text-[#1C1C1C] leading-tight mb-4">
           Three areas. One Outcome: a business that runs without depending on
           you
         </h2>
@@ -52,16 +62,16 @@ export default function ServiceAreas() {
                 <div className="w-9 h-9 bg-[#F6F6FA] rounded-full flex items-center justify-center">
                   <Image src={area.icon} alt="" width={20} height={20} />
                 </div>
-                <h3 className="text-[#5E35B1] font-bold font-serif text-[24px]">
+                <h3 className="text-[#5E35B1] font-bold font-serif text-[26px]">
                   {area.title}
                 </h3>
               </div>
-              <p className="text-[#1C1C1C] text-lg leading-relaxed">
+              <p className="text-[#1C1C1C] text-[13px] leading-relaxed">
                 {area.tagline}
               </p>
               <Link
                 href={area.href}
-                className="inline-flex items-center gap-1 text-[#7B4FD4] font-bold underline underline-offset-2 hover:opacity-70 transition-opacity"
+                className="inline-flex text-[11px] items-center gap-1 text-[#7B4FD4] font-bold underline underline-offset-2 hover:opacity-70 transition-opacity"
               >
                 Learn More →
               </Link>
