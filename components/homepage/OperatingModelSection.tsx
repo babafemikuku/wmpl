@@ -3,7 +3,7 @@ import { FadeIn, FadeUp } from "../global/animations";
 
 export default function OperatingModelSection() {
   return (
-    <section className="bg-[#5E35B1] px-4 md:px-8 py-20">
+    <section className="bg-[#7B4FD4] px-4 md:px-8 py-20">
       <div className="container grid grid-cols-1 lg:grid-cols-2 gap-18 items-center">
         <div className="text-white">
           <FadeUp>

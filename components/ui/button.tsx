@@ -18,7 +18,7 @@ function Button({
   size?: ButtonSize;
 }) {
   const buttonClassName = cn(
-    "inline-flex items-center justify-center rounded-[calc(var(--radius)-1px)] text-[1rem] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+    "inline-flex items-center justify-center rounded-[calc(var(--radius)-1px)] text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
     variant === "default" &&
       "bg-primary text-primary-foreground hover:bg-deep-violet",
     variant === "secondary" && "bg-linen text-near-black hover:bg-parchment",

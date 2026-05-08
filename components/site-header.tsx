@@ -50,7 +50,13 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className="bg-[#F7F5F0]">
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent ${
+          scrolled || menuOpen
+            ? "backdrop-blur-xl shadow-[0_1px_0_rgba(255,255,255,0.07)]"
+            : "bg-near-black/90 backdrop-blur-sm shadow-[0_1px_0_rgba(255,255,255,0.04)]"
+        }`}
+      >
         <div className="container flex min-h-20 items-center justify-between">
           <Link
             href="/"
@@ -74,10 +80,10 @@ export function SiteHeader() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-[0.9rem] font-medium font-body transition-colors duration-200 hover:underline ${
+                  className={`text-[13px] font-bold font-body transition-colors duration-200 hover:underline ${
                     pathname === item.href
                       ? "text-[#7B4FD4] underline font-extrabold"
-                      : "text-[#1C1C1C]"
+                      : "text-parchment"
                   }`}
                 >
                   {item.label}
@@ -159,3 +165,49 @@ export function SiteHeader() {
     </>
   );
 }
+
+// Logo: 11px
+// Nav links: 13px
+// Contact button: 12px
+
+// Hero
+
+// Eyebrow label: 10px
+// Headline (h1): 58px
+// Body text: 16px
+
+// Problem section
+
+// Label: 10px
+// Heading: 44px
+// Body: 15px
+
+// Services
+
+// Section label: 10px
+// Section heading: 42px
+// Card number: 48px
+// Card title: 26px
+// Card question (italic): 13px
+// Card body: 14px
+// Learn more link: 11px
+
+// Scenarios
+
+// Section label: 10px
+// Section heading (same class): 42px
+// Stage name: 28px
+// Scenario text: 15px
+
+// Scope
+
+// Column title: 32px
+// List items: 14px
+// Note at bottom: 14px
+
+// CTA
+
+// Label: 10px
+// Heading: 44px
+// Subtext: 15px
+// Button: 12px

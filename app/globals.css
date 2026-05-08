@@ -49,7 +49,7 @@
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
 
-  --color-near-black: hsl(var(--near-black));
+  --color-near-black: var(--near-black);
   --color-parchment: var(--parchment);
   --color-linen: hsl(var(--linen));
   --color-warm-ash: hsl(var(--warm-ash));
@@ -87,14 +87,13 @@ h6 {
 p,
 a,
 button,
-span,
 li {
   font-family: var(--font-body), sans-serif;
 }
 
 .container {
   margin-inline: auto;
-  width: min(100% - 2rem, 78rem);
+  width: min(100% - 2rem, 95rem);
 }
 
 .grain-overlay {
