@@ -9,15 +9,20 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@portabletext/react": "^6.2.0",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-label": "^2.1.8",
     "@radix-ui/react-select": "^2.2.6",
+    "@sanity/image-url": "^2.1.1",
+    "@sanity/vision": "^5.30.0",
     "class-variance-authority": "^0.7.1",
     "lucide-react": "^1.7.0",
     "motion": "^12.38.0",
     "next": "16.2.1",
+    "next-sanity": "^12.4.5",
     "react": "19.2.4",
     "react-dom": "19.2.4",
+    "styled-components": "^6.4.2",
     "vaul": "^1.1.2"
   },
   "devDependencies": {
@@ -27,6 +32,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
+    "sanity": "^5.30.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
