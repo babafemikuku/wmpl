@@ -5,15 +5,12 @@ import { PortableText, type PortableTextComponents } from "@portabletext/react";
 import { getAllPostSlugs, getPostBySlug } from "@/sanity/lib/client";
 import { TaglineBanner } from "@/components/global/TaglineBanner";
 
-
 export async function generateStaticParams() {
   const slugs = await getAllPostSlugs();
   return slugs.map((slug) => ({ slug }));
 }
 
-export const dynamicParams = true; 
-
-
+export const dynamicParams = true;
 
 const components: PortableTextComponents = {
   block: {
@@ -28,9 +25,7 @@ const components: PortableTextComponents = {
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="mb-3 mt-8 text-xl font-bold text-[#121416]">
-        {children}
-      </h3>
+      <h3 className="mb-3 mt-8 text-xl font-bold text-[#121416]">{children}</h3>
     ),
     h4: ({ children }) => (
       <h4 className="mb-2 mt-6 text-base font-bold uppercase text-[#121416]">
@@ -70,7 +65,6 @@ const components: PortableTextComponents = {
   },
 };
 
-
 type Props = { params: Promise<{ slug: string }> };
 
 export default async function InsightPost({ params }: Props) {
@@ -80,14 +74,24 @@ export default async function InsightPost({ params }: Props) {
   if (!post) notFound();
 
   return (
-    <main className="flex flex-1 flex-col" style={{ backgroundColor: "#F7F5F0" }}>
+    <main
+      className="flex flex-1 flex-col pt-16"
+      style={{ backgroundColor: "#F7F5F0" }}
+    >
       <header className="container max-w-3xl pt-16 pb-10 md:pt-24 md:pb-14">
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.1em] text-electric-violet">
           WMP Insight
         </p>
-        <h1 className="max-w-2xl text-3xl font-bold leading-[1.2] tracking-[-0.02em] text-[#121416] md:text-5xl">
+        <h1 className="max-w-2xl font-display text-3xl font-bold leading-[1.2] tracking-[-0.02em] text-[#121416] md:text-5xl">
           {post.title}
         </h1>
+
+        {post.subtitle && (
+          <h3 className="mt-4 max-w-2xl font-display text-xl italic leading-[1.4] text-[#121416]/50 md:text-2xl">
+            {post.subtitle}
+          </h3>
+        )}
+
         <p className="mt-4 text-sm text-[#121416CF]">{post.readTime}</p>
       </header>
 

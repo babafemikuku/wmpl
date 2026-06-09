@@ -19,6 +19,7 @@ export type PostCard = {
  
 export type PostFull = PostCard & {
   publishedAt: string | null;
+  subtitle: string | null; 
   body: unknown[]; 
 };
  
@@ -36,6 +37,7 @@ const POST_BY_SLUG_QUERY = `
   *[_type == "post" && slug.current == $slug][0] {
     _id,
     title,
+    subtitle,
     "slug": slug.current,
     readTime,
     publishedAt,

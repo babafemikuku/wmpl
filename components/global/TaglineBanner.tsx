@@ -1,7 +1,7 @@
 export function TaglineBanner({ text }: { text: string }) {
   return (
     <div
-      className="relative overflow-hidden rounded-2xl px-6 md:px-10 py-12 text-center"
+      className="relative overflow-hidden rounded-2xl px-6 md:px-10 py-6 text-center"
       style={{ backgroundColor: "#5E35B1" }}
     >
       <div

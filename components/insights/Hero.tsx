@@ -10,7 +10,7 @@ export default function Hero() {
         className="object-cover md:object-[50%_80%]"
       />
 
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-black/60" />
 
       <div className="relative z-10 flex flex-col h-full items-center justify-center">
         <h1 className="text-white text-5xl font-serif font-bold mb-6">
