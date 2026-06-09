@@ -23,10 +23,14 @@ const navigation = [
   { href: "/insights", label: "Insights" },
 ];
 
+const DARK_HERO_PAGES = ["/", "/insights"];
+
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+
+  const hasDarkHero = DARK_HERO_PAGES.includes(pathname);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 48);
@@ -35,12 +39,10 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close menu on route change
   useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
 
-  // Lock body scroll when menu open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => {
@@ -48,14 +50,16 @@ export function SiteHeader() {
     };
   }, [menuOpen]);
 
+  const headerBg = hasDarkHero
+    ? scrolled || menuOpen
+      ? "bg-[#1C1C1C]/95 backdrop-blur-xl shadow-[0_1px_0_rgba(255,255,255,0.07)]"
+      : "bg-transparent backdrop-blur-sm"
+    : "bg-[#1C1C1C]/95 shadow-[0_1px_0_rgba(255,255,255,0.06)]";
+
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent ${
-          scrolled || menuOpen
-            ? "backdrop-blur-xl shadow-[0_1px_0_rgba(255,255,255,0.07)]"
-            : "bg-near-black/90 backdrop-blur-sm shadow-[0_1px_0_rgba(255,255,255,0.04)]"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${headerBg}`}
       >
         <div className="container flex min-h-20 items-center justify-between">
           <Link
@@ -102,11 +106,12 @@ export function SiteHeader() {
             </Link>
           </Button>
 
+          {/* Mobile menu toggle — always light since header is always dark-bg */}
           <button
             onClick={() => setMenuOpen((v) => !v)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
-            className="flex h-10 w-10 items-center justify-center rounded-sm text-[#1C1C1C] transition-colors hover:text-parchment focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric-violet lg:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-sm text-parchment transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric-violet lg:hidden"
           >
             {menuOpen ? (
               <X className="h-6 w-6" />
@@ -138,7 +143,7 @@ export function SiteHeader() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
-                  className={`flex items-center justify-between py-5 text-xl font-semibold transition-colors text-near-black`}
+                  className="flex items-center justify-between py-5 text-xl font-semibold transition-colors text-near-black"
                 >
                   <span>{item.label}</span>
                   {isActive && (
@@ -165,28 +170,3 @@ export function SiteHeader() {
     </>
   );
 }
-
-// Logo: 11px
-// Nav links: 13px
-// Contact button: 12px
-
-// Hero
-
-// Eyebrow label: 10px
-// Headline (h1): 58px
-// Body text: 16px
-
-// Scenarios
-
-// Scope
-
-// Column title: 32px
-// List items: 14px
-// Note at bottom: 14px
-
-// CTA
-
-// Label: 10px
-// Heading: 44px
-// Subtext: 15px
-// Button: 12px
