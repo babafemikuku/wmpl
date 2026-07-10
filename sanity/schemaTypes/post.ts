@@ -28,13 +28,6 @@ export const post = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: "readTime",
-      title: "Read time",
-      type: "string",
-      description: 'e.g. "5 minute read"',
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
       name: "publishedAt",
       title: "Published at",
       type: "datetime",
@@ -69,7 +62,7 @@ export const post = defineType({
     }),
   ],
   preview: {
-    select: { title: "title", subtitle: "readTime" },
+    select: { title: "title", subtitle: "publishedAt" },
   },
   orderings: [
     {

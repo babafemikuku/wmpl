@@ -101,7 +101,7 @@ export default async function InsightPost({ params }: Props) {
 
       <article className="container max-w-3xl py-12 md:py-16">
         {post.body ? (
-          <PortableText value={post.body as any} components={components} />
+          <PortableText value={post.body} components={components} />
         ) : (
           <p className="text-[#121416CC]">No content yet.</p>
         )}
