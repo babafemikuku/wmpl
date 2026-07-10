@@ -22,6 +22,20 @@ export type PostFull = PostCard & {
   subtitle: string | null; 
   body: unknown[]; 
 };
+
+export type BioSectionContent = {
+  stats?: {
+    value?: string | null;
+    label?: string | null;
+  }[] | null;
+  quote?: string | null;
+  quoteAttribution?: string | null;
+  paragraphs?: string[] | null;
+};
+
+export type OurWorkPage = {
+  bio?: BioSectionContent | null;
+};
  
 
 const POST_CARDS_QUERY = `
@@ -42,6 +56,12 @@ const POST_BY_SLUG_QUERY = `
     readTime,
     publishedAt,
     body,
+  }
+`;
+
+const OUR_WORK_PAGE_QUERY = `
+  *[_type == "ourWorkPage" && _id == "ourWorkPage"][0] {
+    bio
   }
 `;
  
@@ -65,4 +85,8 @@ export async function getAllPostSlugs(): Promise<string[]> {
     { next: { revalidate: 60 } }
   );
   return slugs.map((s) => s.slug);
+}
+
+export async function getOurWorkPage(): Promise<OurWorkPage | null> {
+  return client.fetch(OUR_WORK_PAGE_QUERY, {}, { next: { revalidate: 60 } });
 }

@@ -4,4 +4,17 @@ import type {StructureResolver} from 'sanity/structure'
 export const structure: StructureResolver = (S) =>
   S.list()
     .title('Content')
-    .items(S.documentTypeListItems())
+    .items([
+      S.listItem()
+        .title('Our Work Page')
+        .child(
+          S.document()
+            .schemaType('ourWorkPage')
+            .documentId('ourWorkPage')
+            .title('Our Work Page'),
+        ),
+      S.divider(),
+      ...S.documentTypeListItems().filter(
+        (listItem) => listItem.getId() !== 'ourWorkPage',
+      ),
+    ])
