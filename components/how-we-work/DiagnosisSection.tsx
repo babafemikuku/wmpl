@@ -308,17 +308,10 @@ export function DiagnosisSection() {
               />
             </FadeUp>
 
-            <FadeUp delay={0.3}>
+            <FadeUp delay={0.3} className="md:col-span-2">
               <DeliveryCard
                 title="Documented outputs"
                 description="Every engagement produces clear, written deliverables. Frameworks, role definitions, and processes your team can use and build on. All outputs belong to you."
-              />
-            </FadeUp>
-
-            <FadeUp delay={0.4}>
-              <DeliveryCard
-                title="Defined end point"
-                description="WMP steps back at the end of each engagement. The work is designed to be carried forward internally. Ongoing dependency is not the model."
               />
             </FadeUp>
           </div>

@@ -16,7 +16,6 @@ const wmpDoesNot = [
   "HR operations management",
   "Recruitment execution",
   "Day-to-day employee relations",
-  "Retainer-based advisory",
   "Outsourced people management",
 ];
 
